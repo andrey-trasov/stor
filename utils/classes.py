@@ -1,27 +1,20 @@
 class Category:
-    name: str
-    description: str
-    goods: list
-    number_of_categories = 0
-    number_of_unique_products = 0
+    category_count = 0
+    product_count = 0
 
-    def __init__(self, name, description, goods, number_of_categories):
+    def __init__(self, name: str, description: str, products: list = None) -> None:
         self.name = name                              #название
         self.description = description                #описание
-        self.goods = goods                            #список товаров
-        self.number_of_categories = number_of_categories    #общее количество категорий
-        Category.number_of_unique_products += len(goods)   #количество уникальных продуктов
+        self.products = products                      #список товаров
+        Category.category_count += 1                  #общее количество категорий
+        Category.product_count += len(self.products)  #количество уникальных продуктов
 
 
 
 
 class Product:
-    name: str
-    description: str
-    price: float
-    quantity: int
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(self, name: str, description: str, price: float, quantity: int):
         self.name = name                              #название
         self.description = description                #описание
         self.price = float(price)                     #цена

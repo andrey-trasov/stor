@@ -65,15 +65,15 @@ commodity = [
 
 @pytest.fixture()
 def category():
-    return Category(goods[0]["name"], goods[0]["description"], goods[0]["products"], len(goods))
+    return Category(goods[0]["name"], goods[0]["description"], goods[0]["products"])
 
 
 def test_init_category(category):
     assert category.name == "Смартфоны"
     assert category.description == "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни"
-    assert category.goods == commodity
-    assert category.number_of_categories == 2
-    assert category.number_of_unique_products == 3
+    assert category.products == commodity
+    assert category.category_count == 1
+    assert category.product_count == 3
 
 
 @pytest.fixture()
