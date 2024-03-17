@@ -1,4 +1,5 @@
-from classes import Category, Product
+from class_category import Category
+from class_product import Product
 from utils.functions import open_file
 
 

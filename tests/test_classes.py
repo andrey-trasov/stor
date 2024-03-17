@@ -1,6 +1,7 @@
 import pytest
 
-from utils.classes import Category, Product
+from utils.class_category import Category
+from utils.class_product import Product
 
 goods = [
   {
