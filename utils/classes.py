@@ -10,14 +10,15 @@ class Category:
         Category.product_count += len(self.__products)  #количество уникальных продуктов
 
 
-    def add_products(self, goods):
-        self.__products.append(goods)
+    def add_product(self, product):
+        self.__products.append(product)
 
 
     @property
     def products(self):
+        list_products = []
         for j in self.__products:
-            print(f"{j.name}, {int(j.price)} руб. Остаток: {j.quantity} шт.")
+            list_products.append(f"{j.name}, {int(j.price)} руб. Остаток: {j.quantity} шт.")
 
 
 
@@ -32,11 +33,8 @@ class Product:
 
     @classmethod
     def from_dictionary(cls, dictionary):
-        name = dictionary["name"]
-        description = dictionary["description"]
-        price = dictionary["price"]
-        quantity = dictionary["quantity"]
-        return cls(name, description, price, quantity)
+        instance = cls(**dictionary)
+        return instance
 
 
     @property
@@ -46,7 +44,7 @@ class Product:
 
     @price.setter
     def price(self, new_price):
-        if new_price <= self.__price:
+        if new_price <= 0:
             print('Цена введена некорректная')
         else:
             self.__price = new_price
