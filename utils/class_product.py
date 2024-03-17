@@ -30,5 +30,3 @@ class Product:
     def price(self):
         self.__price = None
 
-
-

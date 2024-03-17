@@ -96,5 +96,3 @@ def test_class_product(dictionary):
     assert dictionary.description == "256GB, Серый цвет, 200MP камера"
     assert dictionary.price == 180000.0
     assert dictionary.quantity == 5
-
-
